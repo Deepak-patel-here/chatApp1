@@ -68,7 +68,7 @@ public class AuthService {
 
     public Map<String,Object> getOnlineUser(){
         List<UserModel> userList=repository.findByIsOnlineTrue();
-        Map<String,Object> onlineUser=userList.stream().collect(Collectors.toMap(UserModel::getUserName, userModel -> userModel.getUserName()));
+        Map<String,Object> onlineUser=userList.stream().collect(Collectors.toMap(UserModel::getUserName, userModel -> userModel));
         return onlineUser;
     }
 
